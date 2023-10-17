@@ -1,3 +1,4 @@
+import { ConvexClientProvider } from "../components/providers/convex-provider";
 import { ThemeProvider } from "../components/providers/theme-provider";
 import "./globals.css";
 import type { Metadata } from "next";
@@ -32,15 +33,17 @@ export default function RootLayout({
   return (
     <html lang="en" suppressContentEditableWarning>
       <body className={inter.className}>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-          storageKey="ClonNotion-theme-2"
-        >
-          {children}
-        </ThemeProvider>
+        <ConvexClientProvider>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+            storageKey="ClonNotion-theme-2"
+          >
+            {children}
+          </ThemeProvider>
+        </ConvexClientProvider>
       </body>
     </html>
   );
