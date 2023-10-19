@@ -13,7 +13,7 @@ export const Heading = () => {
 
   return (
     <div className="max-w-3xl space-y-4">
-      <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold">
+      <h1 className="text-3xl sm:text-5xl md:text-6xl font-bold">
         Tus Ideas, documentos y planes, unificados en un solo lugar, bienvenods
         a <span className="underline">CloneNotion</span>
       </h1>
@@ -23,19 +23,21 @@ export const Heading = () => {
       </h3>
       {isLoading && (
         <div className="w-full flex items-center justify-center">
-          <Spinner size={"lg"} />
+          <Spinner size="lg" />
         </div>
       )}
       {isAuthenticated && !isLoading && (
         <Button asChild>
-          <Link href="/documents">Ingresa a CloneNotion</Link>
-          <ArrowRight className="h-4 w-4 ml-2" />
+          <Link href="/documents">
+            Entra en ClonNotion
+            <ArrowRight className="h-4 w-4 ml-2" />
+          </Link>
         </Button>
       )}
       {!isAuthenticated && !isLoading && (
         <SignInButton mode="modal">
           <Button>
-            Únete Gratis
+            Get Jotion free
             <ArrowRight className="h-4 w-4 ml-2" />
           </Button>
         </SignInButton>
