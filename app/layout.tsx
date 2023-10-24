@@ -1,3 +1,5 @@
+import { Toaster } from "sonner";
+
 import { ConvexClientProvider } from "../components/providers/convex-provider";
 import { ThemeProvider } from "../components/providers/theme-provider";
 import "./globals.css";
@@ -41,6 +43,7 @@ export default function RootLayout({
             disableTransitionOnChange
             storageKey="ClonNotion-theme-2"
           >
+            <Toaster position="bottom-center" />
             {children}
           </ThemeProvider>
         </ConvexClientProvider>
